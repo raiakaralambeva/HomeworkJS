@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <style>
+        .tooltipItem{
+            position: relative;
+            height: 55px;
+            width: 60px;
+            padding-top:5px;
+            margin: 200px auto 0 auto;
+
+            color: #fff;
+            font-size: 40px;
+            text-align: center;
+            background-color: #27ae60;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .tooltipWrapper{
+            display: none;
+            position: absolute;
+            height: 130px;
+            width: 200px;
+            top: 70px;
+            left: 40px;
+            padding: 20px;
+            background-color: #bdc3c7;
+            box-shadow: 5px 5px 5px #2c3e50;
+            color:#2c3e50;
+            font-size: 14px;
+        }
+
+        .minus{
+            display: none;
+            margin-top:-3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="tooltipItem">
+        <div class="plus">+</div>
+        <div class="minus">-</div>
+        <div class="tooltipWrapper">
+            <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente error facere possimus repellendus suscipit autem ullam corporis, voluptates officiis ex sunt consequatur ipsa dolore ipsum? Quidem, placeat quam. Non, id!   
+        </div>
+    </div>
+    <script>
+        const tooltipPlusButton=document.getElementsByClassName("plus");
+        const tooltipMinusButton=document.getElementsByClassName("minus");
+        const tooltip=document.getElementsByClassName("tooltipWrapper");
+        tooltipPlusButton[0].addEventListener("click",toggleToMinus);
+        tooltipMinusButton[0].addEventListener("click", toggleToPlus);
+        function toggleToMinus(){
+            tooltipPlusButton[0].style.display="none";
+            tooltipMinusButton[0].style.display="block";
+            tooltip[0].style.display="block";
+        }
+        function toggleToPlus(){
+            tooltipPlusButton[0].style.display="block";
+            tooltipMinusButton[0].style.display="none";
+            tooltip[0].style.display="none";
+        }
+    </script>
+
+</body>
+</html>
