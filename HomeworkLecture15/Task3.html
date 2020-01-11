@@ -33,7 +33,17 @@
         function validator(event){
             let phoneNumber=event.target.value;
             console.log(phoneNumber);
-            if(phoneNumber.length>6 && phoneNumber.length<10 && Number(phoneNumber)){
+            let containsE = function (){
+                for(let i=0; i<phoneNumber.length; i++){
+                    if (phoneNumber[i] == "e"){
+                        return false;
+                     }
+                    else {
+                        return true;
+                    }
+                }
+            };
+            if(phoneNumber.length>6 && phoneNumber.length<10 && Number(phoneNumber) && containsE){
                 document.querySelector(".phoneValidationResult").innerHTML=phoneNumber;
             }
             else{
